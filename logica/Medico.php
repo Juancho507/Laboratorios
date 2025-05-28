@@ -7,7 +7,7 @@ class Medico extends Persona {
     private $foto;
     private $especialidad;
 
-    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = "", $foto = "", $especialidad = ""){
+    public function __construct($id = "", $nombre = "", $apellido = "", $correo = "", $clave = "", $foto = "", $especialidad = null){
         parent::__construct($id, $nombre, $apellido, $correo, $clave);
         $this -> foto = $foto;
         $this -> especialidad = $especialidad;

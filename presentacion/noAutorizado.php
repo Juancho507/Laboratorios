@@ -1,1 +1,1 @@
-No autorizado
+<h1 class="text-center">No tienes permisos</h1>

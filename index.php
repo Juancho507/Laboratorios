@@ -1,31 +1,33 @@
 <?php 
-session_start();
-require ("logica/Especialidad.php");
-require ("logica/Medico.php");
-require ("logica/Paciente.php");
-require ("logica/Cita.php");
-require ("logica/Consultorio.php");
-require ("logica/Admin.php");
-require ("logica/EstadoCita.php");
+if(session_status() == PHP_SESSION_NONE) session_start();
+
+require "logica/Especialidad.php";
+require "logica/Medico.php";
+require "logica/Paciente.php";
+require "logica/Cita.php";
+require "logica/Consultorio.php";
+require "logica/Admin.php";
+require "logica/EstadoCita.php"
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Matasanos EPS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Matasanos EPS</title>
 
-<!-- Bootstrap jajajaj -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+	<!-- Bootstrap -->
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+		rel="stylesheet">
 
-<!-- FontAwesome -->
-<link href="https://use.fontawesome.com/releases/v6.7.2/css/all.css"
-	rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" ></script>
+	<!-- FontAwesome -->
+	<link href="https://use.fontawesome.com/releases/v6.7.2/css/all.css"
+		rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" ></script>
+	<link rel="icon" href="img/logo.png">
 </head>
 <?php 
 
@@ -44,7 +46,7 @@ $paginas_con_autenticacion = array(
 
 
 if(!isset($_GET["pid"])){
-    include ("presentacion/inicio.php");
+    include "presentacion/inicio.php";
 }else{
 
     $pid = base64_decode($_GET["pid"]);

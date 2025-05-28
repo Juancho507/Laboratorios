@@ -1,15 +1,12 @@
 <?php
-class EstadoCitaDAO {
+class EstadoCitaDAO{
     private $id;
     private $valor;
-    
-    public function __construct($id = 0, $valor = "") {
+    public function __construct($id="", $valor=""){
         $this -> id = $id;
         $this -> valor = $valor;
     }
-    public function consultarTodos(){
-        return "select idEstadoCita, valor from EstadoCita";
+    public function consultarRestantes(){
+        return "select idEstadoCita, valor from EstadoCita where idEstadoCita not in (select idEstadoCita from EstadoCita where idEstadoCita = {$this -> id})";
     }
-    
 }
-    
