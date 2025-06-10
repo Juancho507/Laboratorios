@@ -8,5 +8,10 @@ if($_SESSION["rol"] != "medico"){
 include ("presentacion/encabezado.php");
 include ("presentacion/menuMedico.php");
 ?>
+
+
+
+
+
 </body>
 

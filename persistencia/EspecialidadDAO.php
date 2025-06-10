@@ -15,9 +15,8 @@ class EspecialidadDAO{
                 order by nombre asc";
     }
     
-    public function tieneMedicos(){
-        return "select idMedico from Medico where Especialidad_id = ". $this -> id;
-    }
     
 }
+
+
 ?>

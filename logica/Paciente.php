@@ -1,4 +1,5 @@
 <?php
+require_once("persistencia/Conexion.php");
 require_once("logica/Persona.php");
 require_once("persistencia/PacienteDAO.php");
 
@@ -35,5 +36,19 @@ class Paciente extends Persona {
         $this -> apellido = $datos[1];
         $this -> correo = $datos[2];
         $conexion->cerrar();
+    }
+    
+    public function buscar($filtro){
+        $conexion = new Conexion();
+        $pacienteDAO = new PacienteDAO();
+        $conexion -> abrir();
+        $conexion -> ejecutar($pacienteDAO -> buscar($filtro));
+        $pacientes = array();
+        while (($datos = $conexion->registro()) != null) {
+            $paciente = new Paciente($datos[0], $datos[1], $datos[2], $datos[3]);
+            array_push($pacientes, $paciente);
+        }
+        $conexion->cerrar();
+        return $pacientes;
     }
 }

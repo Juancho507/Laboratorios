@@ -29,4 +29,18 @@ class PacienteDAO{
                 from Paciente p
                 where idPaciente = '" . $this -> id . "'";
     }
+
+    public function buscar($filtro){
+        $condicion = array_map(function($palabra) {
+            $palabras = trim($palabra);
+            return "(p.nombre like '%" . $palabras. "%' or p.apellido like '%" . $palabras . "%')";
+        }, array_filter(explode(" ", $filtro)));
+            if (empty($condicion)) {
+            return "select p.idPaciente, p.nombre, p.apellido, p.correo from Paciente p";
+        } else {
+            return "select p.idPaciente, p.nombre, p.apellido, p.correo
+                    from Paciente p
+                    where " . implode(" and ", $condicion);
+        }
+    }
 }

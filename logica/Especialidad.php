@@ -34,16 +34,9 @@ class Especialidad{
         return $especialidades;
     }
     
-    public function tieneMedicos(){
-        $tieneM = false;
-        $conexion = new Conexion();
-        $eDao = new EspecialidadDAO($this -> id);
-        $conexion -> abrir();
-        $conexion -> ejecutar($eDao -> tieneMedicos());
-        if($conexion -> registro() != null){
-            $tieneM = true;
-        }
-        $conexion -> cerrar();
-        return $tieneM;
-    }
+    
 }
+
+
+
+?>

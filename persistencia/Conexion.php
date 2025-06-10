@@ -24,8 +24,6 @@ class Conexion{
         return $this -> resultado -> num_rows;
     }
     
-    
-    
 }
 
 

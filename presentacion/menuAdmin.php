@@ -20,6 +20,13 @@ $admin -> consultar();
 					<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
 						href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false"> Paciente </a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="?pid=<?php echo base64_encode("presentacion/paciente/buscarPaciente.php")?>">Buscar</a></li>
+							<li><a class="dropdown-item" href="#">Crear</a></li>
+						</ul></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+						href="#" role="button" data-bs-toggle="dropdown"
 						aria-expanded="false"> Cita </a>
 						<ul class="dropdown-menu">
 							<li><a class="dropdown-item" href="?pid=<?php echo base64_encode("presentacion/cita/consultarCita.php")?>">Consultar</a></li>
